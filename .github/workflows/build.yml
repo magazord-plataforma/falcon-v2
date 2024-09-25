@@ -21,10 +21,7 @@ jobs:
         with:
           node-version: '${{ steps.node_version.outputs.NVMRC }}'
           registry-url: 'https://registry.npmjs.org'  # Adicionando a URL do registro NPM
-          
-      - name: Set up .npmrc
-        run: echo "//npm.pkg.github.com/:_authToken=${{ secrets.NPM_TOKEN }}" > .npmrc
-
+        
       - name: Authenticate to npmjs
         run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc  # Autentica usando o token
 
