@@ -1,15 +1,15 @@
 {
   "name": "falcon-v2",
   "private": false,
-  "version": "0.0.0",
+  "version": "0.0.3",
   "type": "module",
+  "license": "MIT",
   "workspaces": [
-    "packages/*/*"
+    "src/packages/*"
   ],
   "scripts": {
     "dev": "vite",
-    "build": "node build.mjs",
-    "publish:stable": "vite bump:stable && vite clean && vite build && yarn workspaces foreach -pvW npm publish --tolerate-republish --access public",
+    "publish:all": "npm publish --workspaces --if-present --access public",
     "lint": "eslint .",
     "preview": "vite preview"
   },
