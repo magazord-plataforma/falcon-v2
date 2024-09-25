@@ -26,9 +26,6 @@ jobs:
         with:
           node-version: '${{ steps.node_version.outputs.NVMRC }}'
           registry-url: 'https://registry.npmjs.org'  # Adicionando a URL do registro NPM
-        
-      - name: Authenticate to npmjs
-        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc  # Autentica usando o token
 
       - name: Install dependencies
         run: npm install  # Usando npm install para instalar as dependências
