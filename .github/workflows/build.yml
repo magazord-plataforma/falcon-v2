@@ -20,14 +20,21 @@ jobs:
       - name: Read Node version
         id: node_version
         run: echo "NVMRC=$(cat .nvmrc)" >> $GITHUB_OUTPUT
+        
       - name: Set Node version
         uses: actions/setup-node@v2
         with:
           node-version: '${{ steps.node_version.outputs.NVMRC }}'
+          registry-url: 'https://registry.npmjs.org'  # Adicionando a URL do registro NPM
+        
+      - name: Authenticate to npmjs
+        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc  # Autentica usando o token
+
       - name: Install dependencies
-        run: npm i
+        run: npm install  # Usando npm install para instalar as dependências
+
       - name: Run Publish All
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: npm run publish:all
+        run: npm run publish:all  # Executa o script de publicação
