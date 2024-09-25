@@ -7,6 +7,9 @@
   "workspaces": [
     "src/packages/*"
   ],
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "scripts": {
     "dev": "vite",
     "publish:all": "npm publish --registry=https://npm.pkg.github.com/ --workspaces --if-present --access public",
