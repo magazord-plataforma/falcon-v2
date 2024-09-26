@@ -24,6 +24,6 @@ jobs:
       - run: npm ci
 
       - name: Release
-        run: npm run version:all && npm run publish:all
+        run: npm run publish:all
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
