@@ -1,7 +1,7 @@
 {
-    "name": "@mzrd/teste",
+    "name": "@mzrd/tokens",
     "private": false,
-    "version": "1.2.8",
+    "version": "1.0.1",
     "license": "MIT",
     "source": "./src/index.ts",
     "main": "./src/index.ts",
