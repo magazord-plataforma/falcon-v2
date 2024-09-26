@@ -1,7 +1,7 @@
 export function Teste() {
     return (
         <div>
-            teste
+            teste 2
         </div>
     )
 }
