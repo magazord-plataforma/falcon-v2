@@ -13,7 +13,6 @@
   },
   "scripts": {
     "dev": "vite",
-    "version:update": "npm version patch",
     "version:all": "npm run --workspace src/packages version:update",
     "publish:all": "npm run version:all && npm publish --workspaces --if-present --access public",
     "publish": "npm publish --access public",
