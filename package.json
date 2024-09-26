@@ -13,7 +13,7 @@
   },
   "scripts": {
     "dev": "vite",
-    "version:all": "npm run --workspace packages npm version patch",
+    "version:all": "npm run --workspace src/package npm version patch",
     "publish:all": "npm run version:all && npm publish --workspaces --if-present --access public",
     "publish": "npm publish --access public",
     "lint": "eslint .",
