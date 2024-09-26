@@ -14,7 +14,7 @@
   "scripts": {
     "dev": "vite",
     "version:update": "npm version patch",
-    "version:all": "npm run version:update --workspace src/package",
+    "version:all": "npm run --workspace src/package version:update",
     "publish:all": "npm run version:all && npm publish --workspaces --if-present --access public",
     "publish": "npm publish --access public",
     "lint": "eslint .",
