@@ -23,6 +23,6 @@ jobs:
           owner: '@mzrd'
       - run: npm ci
       - name: Release
-        run: npm run publish
+        run: npm run publish:all
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
