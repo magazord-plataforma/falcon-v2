@@ -13,7 +13,7 @@
   },
   "scripts": {
     "dev": "vite",
-    "publish:all": "npm publish --registry=https://npm.pkg.github.com/ --workspaces --if-present --access public",
+    "publish:all": "npm publish --workspaces --if-present --access public",
     "lint": "eslint .",
     "preview": "vite preview"
   },
