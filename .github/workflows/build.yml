@@ -19,6 +19,7 @@ jobs:
         with:
           node-version: "lts/*"
           registry-url: 'https://npm.pkg.github.com'
+          scope: '@mzrd'
       - run: npm ci
       - run: npm audit signatures
       - name: Release
