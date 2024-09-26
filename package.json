@@ -13,7 +13,7 @@
   },
   "scripts": {
     "dev": "vite",
-    "version:all": "npx lerna version patch --no-push --yes",
+    "version:all": "npm workspaces foreach npm version patch",
     "publish:all": "npm run version:all && npm publish --workspaces --if-present --access public",
     "publish": "npm publish --access public",
     "lint": "eslint .",
