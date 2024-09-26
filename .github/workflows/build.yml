@@ -14,22 +14,15 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: google-github-actions/release-please-action@v4
-        id: release
-        with:
-          release-type: node
-
       - uses: actions/checkout@v4
-        if: ${{ steps.release.outputs.release_created }}
-
       - uses: actions/setup-node@v4
-        if: ${{ steps.release.outputs.release_created }}
         with:
-          registry-url: 'https://registry.npmjs.org'
-
+          node-version: "lts/*"
+          registry-url: 'https://npm.pkg.github.com'
       - run: npm ci
-        if: ${{ steps.release.outputs.release_created }}
-
-      - run: npm run publish:all
+      - run: npm audit signatures
+      - name: Release
         env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npm run publish:all  # Executa o script de publicação
