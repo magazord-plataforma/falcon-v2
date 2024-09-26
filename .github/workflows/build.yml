@@ -22,6 +22,7 @@ jobs:
           registry-url: https://registry.npmjs.org
           owner: '@mzrd'
       - run: npm ci
+
       - name: Release
         run: npm run version:all && npm run publish:all
         env:
