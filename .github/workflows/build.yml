@@ -15,15 +15,12 @@ jobs:
     name: publish
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v2.1.1
+      - uses: actions/setup-node@v1.4.2
         with:
-          node-version: "lts/*"
-          registry-url: 'https://npm.pkg.github.com'
-          scope: '@mzrd'
-      - run: npm ci
-      - run: npm audit signatures
+          node-version: 12
+          registry-url: https://npm.pkg.github.com
       - name: Release
+        run: npm run publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: npm run publish  # Executa o script de publicação
